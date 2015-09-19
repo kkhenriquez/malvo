@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Malvo. A Training Log for runners.</title>
+  <title>MaLvo. A Training Log for runners.</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="angular-chart.js/angular-chart.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js" type="text/javascript"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="angular-chart.js/angular-chart.min.js"></script>
 </head>
-<body>
+  
+<body ng-app="app">
   <div class="jumbotron">
     <div class="container">
       <h1 class="lead">MaLvo. <small>A Training Log for runners.</small></h1>
@@ -36,7 +43,7 @@
           <div class="col-md-3">
             <div class="input-group">
     <span class="input-group-addon" id="ppm">%</span>
-    <input type="text" class="form-control" placeholder="PPM" aria-describedby="dist">
+    <input type="text" class="form-control" placeholder="BPM" aria-describedby="dist">
             </div>
           </div>
         </div>
@@ -49,5 +56,64 @@
       
     </div>
   </div>
+<!--  Espacio para la tabla y gráfica-->
+  <div class="data">
+<!--    Contenedor-->
+    <div class="container">
+      <div class="row">
+<!--        Tabla en 6 col medianas-->
+        <div class="col-md-6">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Distance</th>
+                <th>Time</th>
+                <th>Pace</th>
+                <th>BPM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>6.8</td>
+                <td>34</td> 
+                <td>5.00</td>
+                <td>165</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+<!--        Espacio de gráfico en 6 col medianas-->
+        <div class="col-md-6 ng-scope" id="line-chart" ng-controller="TabController as tab">
+          
+            <ul class="nav nav-pills">
+              <li ng-class="{ active:tab.isSet(1)}"><a href ng-click=tab.setTab(1)>Distance</a></li>
+              <li ng-class="{ active:tab.isSet(2)}"><a href ng-click=tab.setTab(2)>Time</a></li>
+              <li ng-class="{ active:tab.isSet(3)}"><a href ng-click=tab.setTab(3)>Pace</a></li>
+            </ul>
+<!--          Este es el gráfico-->
+          <div ng-controller="BarCtrl" ng-show="tab.isSet(1)">
+            <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick">
+            </canvas>
+          </div>
+          <div ng-controller="LineCtrl" ng-show="tab.isSet(2)">
+            <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick">
+            </canvas>
+          </div>
+          <div ng-controller="PaceCtrl" ng-show="tab.isSet(3)">
+            <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick">
+            </canvas>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!--  Javascript-->
+  
+  <script src="js/app2.js"></script>
 </body>
 </html>
