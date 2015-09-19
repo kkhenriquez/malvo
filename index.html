@@ -13,33 +13,39 @@
 </head>
   
 <body ng-app="app">
+<!--  Jumbotron-->
   <div class="jumbotron">
     <div class="container">
       <h1 class="lead">MaLvo. <small>A Training Log for runners.</small></h1>
     </div>
   </div>
+<!-- Espacio para los forms -->
   <div class="forms">
     <div class="container">
       <form action="" method="post">
         <div class="row">
+<!--          Distancia-->
           <div class="col-md-3">
             <div class="input-group">
     <span class="input-group-addon" id="dist">-></span>
     <input type="text" class="form-control" placeholder="Distance" aria-describedby="dist">
             </div>
           </div>
+<!--          Tiempo-->
           <div class="col-md-3">
             <div class="input-group">
     <span class="input-group-addon" id="time">%</span>
     <input type="text" class="form-control" placeholder="Time" aria-describedby="dist">
             </div>
           </div>
+<!--          Ritmo-->
           <div class="col-md-3">
             <div class="input-group">
     <span class="input-group-addon" id="pace">-></span>
     <input type="text" class="form-control" placeholder="Pace" aria-describedby="dist">
             </div>
           </div>
+<!--          PPM-->
           <div class="col-md-3">
             <div class="input-group">
     <span class="input-group-addon" id="ppm">%</span>
@@ -47,7 +53,7 @@
             </div>
           </div>
         </div>
-        
+<!--        Boton Submit-->
           <div class="align-center">
             <input type="submit" value="Submit" class="btn btn-default">
           </div>
@@ -85,7 +91,7 @@
           </table>
         </div>
 <!--        Espacio de gráfico en 6 col medianas-->
-        <div class="col-md-6 ng-scope" id="line-chart" ng-controller="TabController as tab">
+        <div class="col-md-6 ng-scope" ng-controller="TabController as tab">
           
             <ul class="nav nav-pills">
               <li ng-class="{ active:tab.isSet(1)}"><a href ng-click=tab.setTab(1)>Distance</a></li>
