@@ -3,11 +3,17 @@
 }
 .btn{
   width: 120px;
+}
+.espacio25{
   margin-top: 25px;
   margin-bottom: 25px;
-  
 }
 .myChart {
   width: 100%;
   height: 200px;
 }
+.narrow{
+  width: 50% !important;
+
+}
+
