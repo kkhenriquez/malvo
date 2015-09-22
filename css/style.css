@@ -14,6 +14,11 @@
 }
 .narrow{
   width: 50% !important;
-
+}
+.timeSpace{
+  padding: 2px;
+}
+.custom-padding{
+  padding: 8px;
 }
 
