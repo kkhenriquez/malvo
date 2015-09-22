@@ -4,7 +4,7 @@ var app = angular.module("app", ["chart.js"]);
 app.controller("BarCtrl", function ($scope) {
   'use strict';
   $scope.labels = ['1', '2', '3', '4', '5', '6', '7'];
-  $scope.series = ['Series A'];
+  $scope.series = ['Race distances (Km)'];
 
   $scope.data = [
     [65, 59, 80, 81, 56, 55, 40]
@@ -15,7 +15,7 @@ app.controller("BarCtrl", function ($scope) {
 app.controller("LineCtrl", function ($scope) {
   'use strict';
   $scope.labels = ['1', '2', '3', '4', '5', '6', '7'];
-  $scope.series = ['Series B'];
+  $scope.series = ['Race times'];
   $scope.data = [
     [45, 34, 58, 75, 99, 23, 65]
   ];
@@ -24,7 +24,7 @@ app.controller("LineCtrl", function ($scope) {
 app.controller("PaceCtrl", function ($scope) {
   'use strict';
   $scope.labels = ['1', '2', '3', '4', '5', '6', '7'];
-  $scope.series = ['Series C'];
+  $scope.series = ['Race paces'];
   $scope.data = [
     [6, 6, 8, 4, 5, 7.5, 6.2]
   ];

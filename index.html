@@ -16,15 +16,26 @@
     <div class="container">
 <!--      Titulo principal-->
       <h1 class="lead">Malvo. <small>A Training Log for runners.</small></h1>
-      <p> Texto de prueba 1</p>
     </div>
   </div>
 <!-- Espacio para los forms -->
   <div class="forms">
+    
     <div class="container">
+      
       <form action="" method="post">
 <!--        Row para los forms-->
         <div class="row">
+          
+          <div class="col-md-2">
+            <h4>Date</h4>
+            <div class="input-group">
+              <span class="input-group-addon custom-padding"><span class="glyphicon glyphicon-road"></span></span>
+              <input type="text" name="fecha" class="form-control" placeholder="mm/dd/yy" aria-describedby="date">
+            </div>
+          
+          </div>
+          
 <!--          Distancia-->  
           <div class="col-md-3">
             <h4>Distance</h4>
@@ -34,6 +45,7 @@
     <input type="text" class="form-control" placeholder="in Km" aria-describedby="dist">
             </div>
           </div>
+          
 <!--          Tiempo-->
           <div class="col-md-3">
             <h4>Time</h4>
@@ -45,14 +57,12 @@
               <span class="input-group-addon timeSpace" id="time">:</span>
               <input type="text" class="form-control" placeholder="Sec">
             </div>
-            <div class="input-group">
-              
-            </div>
+            
           </div>
 
 <!--          PPM-->
-          <div class="col-md-3">
-            <h4>Beats per minute</h4>
+          <div class="col-md-2">
+            <h4>BPM</h4>
             <div class="input-group">
     <span class="input-group-addon custom-padding" id="ppm"><span class="glyphicon glyphicon-heart"></span></span>
     <input type="text" class="form-control" placeholder="BPM" aria-describedby="dist">
@@ -60,7 +70,7 @@
           </div>
 <!--          Tipo-->
           
-          <div class="col-md-3">
+          <div class="col-md-2">
             <h4>Type of Training</h4>
             <div class="input-group">
     <span class="input-group-addon custom-padding" id="pace"><span class="glyphicon glyphicon-flag"></span></span>
@@ -68,6 +78,7 @@
             </div>
           </div>
         </div>
+        
 <!--        Boton Submit-->
           <div class="align-center">
             <input type="submit" value="Submit" class="btn btn-default espacio25">
@@ -81,13 +92,16 @@
 <!--    Contenedor-->
     <div class="container">
       <div class="row">
+        
 <!--        Tabla en 6 col medianas-->
         <div class="col-md-6">
           <table class="table table-hover">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Distance <span class="caret"></span></th>
+                <th>Distance<button>
+                  <span class="caret"></span></th>
+                  </button>
                 <th>Time <span class="caret"></span></th>
                 <th>Pace <span class="caret"></span></th>
                 <th>BPM <span class="caret"></span></th>
@@ -154,6 +168,8 @@
               
             </tbody>
           </table>
+          
+<!--          Boton para ver todo-->
           <div class="align-center">
             <button type="button" class="btn btn-default" onclick="openNewWindow()" >See All</button>
           </div>
